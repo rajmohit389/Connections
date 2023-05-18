@@ -1,0 +1,13 @@
+{
+  "name": "connections",
+  "version": "1.0.0",
+  "description": "this is a social media application on mern technology",
+  "main": "app.js",
+  "scripts": {
+    "build": "cd server && npm install  && cd ../client && npm install && npm run build",
+    "start": "node server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rajmohit",
+  "license": "ISC"
+}
