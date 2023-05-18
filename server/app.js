@@ -79,10 +79,8 @@ app.all('*',(req,res,next)=>{
 
 app.use((err,req,res,next)=>{
     const {message='Oh!! Something went wrong',statusCode=500} = err
-    if(process.env.NODE_ENV==="production"){
-        err.stack=null;
-    }
-    console.log(err)
+    err.stack=null
+    // console.log(err)
     res.status(statusCode).json({error:err.message})
 })
 
