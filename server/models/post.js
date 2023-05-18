@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 const {ObjectId}=mongoose.Schema.Types;
 
-const {cloudinary}=require('../cloudinary')
+const {cloudinary}=require('../cloudinary/index')
 const Comment=require('./comment')
 
 const ImageSchema=new mongoose.Schema({

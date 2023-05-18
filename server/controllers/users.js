@@ -1,6 +1,6 @@
 const User = require('../models/user')
 const Post = require('../models/post')
-const {cloudinary}=require('../cloudinary')
+const {cloudinary}=require('../cloudinary/index')
 
 module.exports.getProfile = async (req, res) => {
     const user = await User.findOne({ _id: req.params.userId })

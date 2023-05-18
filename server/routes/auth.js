@@ -5,7 +5,7 @@ const {loggedIn,validateUser}=require('../middleware')
 const auth=require('../controllers/auth')
 const multer=require('multer')
 
-const {storage}=require('../cloudinary')
+const {storage}=require('../cloudinary/index')
 const upload=multer({storage})
 
 router.get('/getloggedInUser',(req,res)=>{

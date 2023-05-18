@@ -1,7 +1,7 @@
 const Post = require('../models/post')
 const User = require('../models/user')
 const Comment = require('../models/comment')
-const {cloudinary}=require('../cloudinary')
+const {cloudinary}=require('../cloudinary/index')
 
 module.exports.allPosts = async (req, res) => {
     const posts = await Post.find({}).populate("postedBy").select("-comments").sort('-createdAt')
