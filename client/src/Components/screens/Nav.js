@@ -100,7 +100,7 @@ export default function Nav() {
                             {userList && <ul className="list-group">
                                 {userList.map((item) => {
                                     return (
-                                        <li className="list-group-item border border-success" key={item._id} ><Link to={item._id.toString() === state._id.toString() ? "/profile" : "/users/" + item._id} onClick={() => {
+                                        <li className="list-group-item border border-success" key={item._id} ><Link to={item._id.toString() === state._id.toString() ? "/profile" : "/users/" + item._id + "/v"} onClick={() => {
                                             // document.querySelector('.bd-example-modal-lg').modal('close')
                                         }}>{item.username}</Link></li>
                                     )

@@ -50,7 +50,7 @@ function Comment({ postId, commenttorender }) {
                     {(comment.commentedBy._id.toString() === state._id.toString()) &&
                         <i className="fa-solid fa-trash fa-lg float-right px-2 pt-2" style={{ cursor: "pointer", color: '#E42525' }} onClick={deleteComment}></i>
                     }
-                    <h6><Link to={comment.commentedBy._id.toString() === state._id.toString() ? "/profile" : "/users/" + comment.commentedBy._id}>{comment.commentedBy.username}</Link></h6>
+                    <h6><Link to={comment.commentedBy._id.toString() === state._id.toString() ? "/profile" : "/users/" + comment.commentedBy._id + "/v"}>{comment.commentedBy.username}</Link></h6>
                     <pre style={{ fontSize: '15px' }} >{comment.text}</pre>
                     {comment.likes.includes(state._id) ?
                         <i className="fa-solid fa-thumbs-up my-0 mx-2 fa-lg" id={"thumbcomment" + comment._id} style={{ cursor: "pointer", color: '#1840E0' }} onClick={unlikeComment}></i>

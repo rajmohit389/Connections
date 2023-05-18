@@ -124,7 +124,7 @@ function Post() {
                             <Link to={"/posts/" + post._id + "/edit"}><button className='btn btn-info float-right'>Edit</button></Link>
                         }
                     </div>
-                    <h3 className="container mt-2"><Link to={post.postedBy._id.toString() === state._id.toString() ? "/profile" : "/users/" + post.postedBy._id}>{post.postedBy.username}</Link></h3>
+                    <h3 className="container mt-2"><Link to={post.postedBy._id.toString() === state._id.toString() ? "/profile" : "/users/" + post.postedBy._id + "/v"}>{post.postedBy.username}</Link></h3>
                     <h2 className='container'>{post.title}</h2>
                     <pre style={{ fontSize: '20px' }} className='container' >{post.description}</pre>
                     {post.images && <div id="carouselPost" className="carousel slide" data-ride="carousel">
