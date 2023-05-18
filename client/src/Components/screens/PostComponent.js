@@ -66,7 +66,7 @@ function PostComponent({ posttorender }) {
                         }
                         <h5 className='container px-1'>{post.likes.length}</h5>
                     </div>
-                    <h4 className="container" style={{fontSize:'15px'}}><Link to={"/posts/" + post._id}>Add a Comment/View Comments</Link></h4>
+                    <h4 className="container" style={{fontSize:'15px'}}><Link to={"/posts/" + post._id + "/v"}>Add a Comment/View Comments</Link></h4>
                 </div>
                 :
                 <></>

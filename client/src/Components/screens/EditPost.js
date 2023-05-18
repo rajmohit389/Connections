@@ -70,7 +70,7 @@ export default function EditPost() {
                 setInterval(() => {
                     setMsg({ type: "CLEAR" })
                 }, 10000)
-                navigate(`/posts/${postId}`)
+                navigate(`/posts/${postId}/v`)
             }
             else {
                 setMsg({ type: "UPDATE", payload: { error: 1, message: res.data.error } });

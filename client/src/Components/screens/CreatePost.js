@@ -42,7 +42,7 @@ export default function CreatePost() {
                 setInterval(() => {
                     setMsg({ type: "CLEAR" })
                 }, 10000)
-                navigate(`/posts/${res.data.post._id}`)
+                navigate(`/posts/${res.data.post._id}/v`)
             }
             else {
                 setMsg({ type: "UPDATE", payload: { error: 1, message: res.data.error } });
