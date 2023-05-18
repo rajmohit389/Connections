@@ -54,10 +54,10 @@ const Routing = () => {
         <Route exact path="/createpost" element={
           <CreatePost />
         }></Route>
-        <Route exact path="/posts/:postId" element={
+        <Route exact path="/posts/:postId/" element={
           <Post />
         }></Route>
-        <Route exact path="/users/:userId" element={
+        <Route exact path="/users/:userId/" element={
           <UserProfile />
         }></Route>
         <Route exact path="/subposts" element={
