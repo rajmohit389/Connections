@@ -1,11 +1,10 @@
-if(process.env.NODE_ENV !== "production"){
-    require('dotenv').config()
-}
+require('dotenv').config()
 
 const express=require('express')
 const app=express()
 const PORT=process.env.PORT || 5000
 
+const path=require("path")
 const cors=require('cors')
 const mongoose=require('mongoose')
 const session=require('express-session')
@@ -61,12 +60,18 @@ passport.use(new LocalStrategy(User.authenticate()))
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
-
 app.use('/',authRoutes)
 app.use('/register',authRoutes)
 app.use('/users',userRoutes)
 app.use('/posts',postRoutes)
 app.use('/posts/:postId/comments',commentRoutes)
+
+const __dirname=path.resolve()
+app.use(express.static(path.join(__dirname, "/client/build")));
+
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/client/build/index.html"))
+);
 
 app.all('*',(req,res,next)=>{
     next(new ExpressError('Page Not Found',404))
