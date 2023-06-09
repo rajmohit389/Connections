@@ -79,7 +79,7 @@ app.all('*',(req,res,next)=>{
 app.use((err,req,res,next)=>{
     const {message='Oh!! Something went wrong',statusCode=500} = err
     err.stack=null
-    // console.log(err)
+    console.log(err)
     res.status(statusCode).json({error:err.message})
 })
 
