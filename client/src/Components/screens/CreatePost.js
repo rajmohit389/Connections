@@ -54,6 +54,7 @@ export default function CreatePost() {
             setDescription("")
             setImages([]);
         }).catch(err => {
+            console.log(err);
             const errormessage = err.response.data.error || "Some error Occured";
             setMsg({ type: "UPDATE", payload: { error: 1, message: errormessage } });
             setInterval(() => {
